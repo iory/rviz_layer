@@ -1,0 +1,9 @@
+<library path="lib/librenault_rviz_plugins">
+<class name="renault_rviz_plugins/ObstacleArray"
+       type="renault_rviz_plugins::ObstacleArrayDisplay"
+       base_class_type="rviz::Display">
+  <description>
+    Displays for renault_lidar/ObstacleArray message
+  </description>
+</class>
+</library>
