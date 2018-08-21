@@ -64,9 +64,11 @@ link_directories(${catkin_LIBRARY_DIRS})
 add_library(rviz_layer ${SOURCE_FILES} ${UIC_FILES})
 
 if(rviz_QT_VERSION VERSION_LESS "5")
-  target_link_libraries(rviz_layer ${QT_LIBRARIES} ${catkin_LIBRARIES} ${rviz_DEFAULT_PLUGIN_LIBRARIES})
+  target_link_libraries(rviz_layer ${QT_LIBRARIES} ${catkin_LIBRARIES} ${rviz_DEFAULT_PLUGIN_LIBRARIES}
+     ${jsk_rviz_plugins_LIBRARY_DIRS}/libjsk_rviz_plugins.so)
 else()
-  target_link_libraries(rviz_layer Qt5::Widgets ${catkin_LIBRARIES} ${rviz_DEFAULT_PLUGIN_LIBRARIES})
+  target_link_libraries(rviz_layer Qt5::Widgets ${catkin_LIBRARIES} ${rviz_DEFAULT_PLUGIN_LIBRARIES}
+    ${jsk_rviz_plugins_LIBRARY_DIRS}/libjsk_rviz_plugins.so)
 endif()
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
